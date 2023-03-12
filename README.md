@@ -15,4 +15,4 @@ Moreover, the background as to be animated with the album colors and reactiv to 
 
 ## Next Level PROJECT
 This project isn't basic.
-Indeed, [Vite.js](https://vitejs.dev/à, [Three.js](https://threejs.org/) are part of the adventure.
+Indeed, [Vite.js](https://vitejs.dev/), [Three.js](https://threejs.org/) are part of the adventure.
