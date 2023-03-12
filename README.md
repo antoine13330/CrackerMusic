@@ -16,3 +16,6 @@ Moreover, the background as to be animated with the album colors and reactiv to 
 ## Next Level PROJECT
 This project isn't basic.
 Indeed, [Vite.js](https://vitejs.dev/), [Three.js](https://threejs.org/) are part of the adventure.
+
+Vite js is needed to make the website as fast as possible because threejs will take some ressources. 
+Threejs is used to make the 3D Model in background that react with the music.
