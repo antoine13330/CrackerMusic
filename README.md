@@ -12,7 +12,7 @@ Beautiful art work has been made on this album and we want to respect it.
 This is why we are not fetching the song's cover from our music providers
 
 ## Stack
-<img src="https://img.icons8.com/doodle/256/svetle.png" alt="Svelte" width="100"/>
+<img src="https://img.icons8.com/doodle/256/svetle.png" alt="Svelte ( SvelteKit Vite.js Vitest )" width="100"/>
 <img src="https://img.icons8.com/color/256/typescript.png" alt="TypeScript" width="100"/>
 <img src="https://img.icons8.com/color/256/tailwindcss.png" alt="Tailwind css" width="100"/>
 <img src="https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png" alt="Three.js ( SvelThree )" width="100"/>
@@ -20,5 +20,3 @@ This is why we are not fetching the song's cover from our music providers
 This project isn't basic.
 Indeed, [Vite.js](https://vitejs.dev/), [Three.js](https://threejs.org/) are part of the adventure.
 
-Vite js is needed to make the website as fast as possible because threejs will take some ressources. 
-Threejs is used to make the 3D Model in background that react with the music.
