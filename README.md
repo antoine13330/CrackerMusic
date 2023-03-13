@@ -11,7 +11,7 @@ Moreover, the background as to be animated with the album colors and reactiv to 
 ![Svelte](https://img.icons8.com/doodle/256/svetle.png "Svelte")
 ![Typescript](https://img.icons8.com/color/256/typescript.png "TypeScript")
 ![TailWind](https://img.icons8.com/color/256/tailwindcss.png "Tailwind")
-
+![Three.js](https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png "Three.js ( SvelThree )")
 
 ## Next Level PROJECT
 This project isn't basic.
