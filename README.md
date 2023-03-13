@@ -7,6 +7,10 @@ This project has been created for UX/UI training in the new Gorillaz's album uni
 As we can see in the wireframe, we wanna be able to listen the album via 3 differents music services.
 Moreover, the background as to be animated with the album colors and reactiv to the played music using the [WEB AUDIO API](https://developer.mozilla.org/en-US/docs/web/api/web_audio_api).
 
+We are not trying to make the more versatil gorillaz music player but use the album assets at their best.
+Beautiful art work has been made on this album and we want to respect it. 
+This is why we are not fetching the song's cover from our music providers
+
 ## Stack
 <img src="https://img.icons8.com/doodle/256/svetle.png" alt="Svelte" width="100"/>
 <img src="https://img.icons8.com/color/256/typescript.png" alt="TypeScript" width="100"/>
