@@ -8,11 +8,10 @@ As we can see in the wireframe, we wanna be able to listen the album via 3 diffe
 Moreover, the background as to be animated with the album colors and reactiv to the played music using the [WEB AUDIO API](https://developer.mozilla.org/en-US/docs/web/api/web_audio_api).
 
 ## Stack
-![Svelte](https://img.icons8.com/doodle/256/svetle.png "Svelte")
-![Typescript](https://img.icons8.com/color/256/typescript.png "TypeScript")
-![TailWind](https://img.icons8.com/color/256/tailwindcss.png "Tailwind")
-![Three.js](https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png "Three.js ( SvelThree )")
-<img src="https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png" alt="drawing" width="200"/>
+<img src="https://img.icons8.com/doodle/256/svetle.png" alt="Svelte" width="100"/>
+<img src="https://img.icons8.com/color/256/typescript.png" alt="TypeScript" width="100"/>
+<img src="https://img.icons8.com/color/256/tailwindcss.png" alt="Tailwind css" width="100"/>
+<img src="https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png" alt="Three.js ( SvelThree )" width="100"/>
 ## Next Level PROJECT
 This project isn't basic.
 Indeed, [Vite.js](https://vitejs.dev/), [Three.js](https://threejs.org/) are part of the adventure.
