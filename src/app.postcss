@@ -1,4 +1,9 @@
 /* Write your global styles here, in PostCSS syntax */
+@import "_variables.postcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply text-base text-gray-200 overflow-hidden;
+}
