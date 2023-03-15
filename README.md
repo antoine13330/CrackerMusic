@@ -1,6 +1,8 @@
 # CrackerMusic
 Fan project about the 24/02/2023 Gorillaz's album : Cracker island. 
-Wireframe : [Figma](https://www.figma.com/file/DzisECDtdLAua38NwQWofc/CrackerMusic?node-id=0%3A1&t=lhPleUOF9514jqni-1)
+
+[Figma](https://www.figma.com/file/DzisECDtdLAua38NwQWofc/CrackerMusic?node-id=0%3A1&t=lhPleUOF9514jqni-1)
+
 [Demo](https://cracker-music.netlify.app/)
 ## Description
 This project has been created for UX/UI training in the new Gorillaz's album universe. 
