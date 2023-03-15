@@ -17,7 +17,7 @@ This is why we are not fetching the song's cover from our music providers
 <img src="https://img.icons8.com/color/256/tailwindcss.png" alt="Tailwind css" width="100"/>
 <img src="https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png" alt="Three.js ( SvelThree )" width="100"/>
 
-##CI
+## CI
 Deployed with netlify 
 Github Actions build.yml linked to the project to prevent pushed errors
 
