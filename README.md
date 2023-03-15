@@ -1,7 +1,7 @@
 # CrackerMusic
 Fan project about the 24/02/2023 Gorillaz's album : Cracker island. 
 Wireframe : [Figma](https://www.figma.com/file/DzisECDtdLAua38NwQWofc/CrackerMusic?node-id=0%3A1&t=lhPleUOF9514jqni-1)
-
+[Demo](https://cracker-music.netlify.app/)
 ## Description
 This project has been created for UX/UI training in the new Gorillaz's album universe. 
 As we can see in the wireframe, we wanna be able to listen the album via 3 differents music services.
@@ -16,4 +16,8 @@ This is why we are not fetching the song's cover from our music providers
 <img src="https://img.icons8.com/color/256/typescript.png" alt="TypeScript" width="100"/>
 <img src="https://img.icons8.com/color/256/tailwindcss.png" alt="Tailwind css" width="100"/>
 <img src="https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png" alt="Three.js ( SvelThree )" width="100"/>
+
+##CI
+Deployed with netlify 
+Github Actions build.yml linked to the project to prevent pushed errors
 
