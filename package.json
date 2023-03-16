@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3030",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
@@ -39,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@reactivex/rxjs": "^6.6.7"
+		"@reactivex/rxjs": "^6.6.7",
+		"svelte-preprocess-import-assets": "^0.2.6"
 	}
 }

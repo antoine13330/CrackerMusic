@@ -1,4 +1,12 @@
 /* Write your global styles here, in PostCSS syntax */
+@import "_css/_variables.postcss";
+@import "_css/_font.postcss";
+@import "_css/_animations/glitch-effect.postcss";
+/* @import "_css/_animations/out.postcss"; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply text-base text-gray-200 overflow-hidden;
+}
