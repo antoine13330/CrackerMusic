@@ -1,21 +1,22 @@
-<script lang="ts">
+    <script lang="ts">
     import './song-row.postcss';
     import type { Song } from '../../_model/music/song/song';
-    export let delay = 0;  // ms
+    export let delay : number = 0;  
+    export let page : number = 0;
     export let song : Song;
 </script>
 
 
-<div class="song-row delay-[{delay}ms]">
+<div class="song-row  page-{page}" style="animation-delay : {delay * 50}ms">
     <div class="song-row__content">
         <div class="song-row__cover">
             <img class="song-row__cover--image" src="{song.coverPath}" alt="Gorillaz"/>
         </div>
         <div class="song-row__infos">
             <span class="song-row__title">
-                {song.title}
+                {song.title} 
             </span>
-            {#if song.feat }
+            {#if song.feat}
                 <span class="song-row__feat">
                     ft.{song.feat}
                 </span>

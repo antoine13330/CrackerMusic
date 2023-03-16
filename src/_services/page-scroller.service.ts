@@ -4,6 +4,7 @@ import { writable, type Writable } from 'svelte/store';
 class PageScrollerService {
     public _pageNumber: Writable<number>;
     private maxPage = 1; 
+    public _scrollerActiv = writable(true);
     constructor() {
         this._pageNumber = writable(0);
     }    
@@ -23,6 +24,15 @@ class PageScrollerService {
             }
             return page;
         });
+    }
+
+
+    /**
+     * setScrollerActiv
+     * @param activ
+     */
+    public setScrollerActiv(activ: boolean) {
+        this._scrollerActiv.set(activ);
     }
 
 }

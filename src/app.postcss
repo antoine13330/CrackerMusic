@@ -8,5 +8,12 @@
 @tailwind utilities;
 
 body {
-    @apply text-base text-gray-200 overflow-hidden;
+    @apply text-base 
+    text-gray-200 overflow-hidden
+    antialiased;
+}
+
+/* no scrollbar website */
+::-webkit-scrollbar {
+    @apply hidden;
 }

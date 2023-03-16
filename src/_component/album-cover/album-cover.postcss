@@ -21,8 +21,8 @@
 }
 .album-cover__title {
     @apply text-primary-500
-    font-semibold
-    text-lg;
+    font-bold
+    text-2xl;
 }
 .album-cover__streams {
     @apply relative
@@ -36,7 +36,7 @@
 /*#endregion */
 
 /*#region page 0 */
-.album-cover.page-0 .album-cover__streams {
+.album-cover.page-0 .album-cover__streams , .album-cover.page-0 .album-cover__title {
     animation-name : in;
     animation-duration: .8s;
     animation-timing-function: ease-in;
@@ -46,14 +46,14 @@
 
 /*#region page 1 */
 .album-cover.page-1 {
-    @apply min-h-[80px]
+    @apply
     h-1/4;
 }
 .album-cover.page-1 .album-cover__image {
     @apply w-2/3
     h-2/3;
 }
-.album-cover.page-1 .album-cover__streams {
+.album-cover.page-1 .album-cover__streams , .album-cover.page-1 .album-cover__title {
     animation-name : out;
     animation-duration: .8s;
     animation-timing-function: ease-out;

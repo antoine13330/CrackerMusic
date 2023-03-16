@@ -4,23 +4,28 @@
 	import Nav from '../_component/nav/nav.svelte';
 	import type { Unsubscriber, Writable } from 'svelte/store';
 	import { onDestroy } from 'svelte';
-	import AlbumCover from '../_component/album-cover/album-cover.svelte';
 	/*#region layout lifecycle*/
 	let amountOfScrolls : number = 0;
 	let page : number = 0;
-	const pageScrollerServiceUnsub : Unsubscriber = pageScrollerService._pageNumber.subscribe((value : number) => {
+	const pageScrollerNumberUnsub : Unsubscriber = pageScrollerService._pageNumber.subscribe((value : number) => {
 			amountOfScrolls = 0;
 			page = value;
 		});
+	let pageScrollerActiv : boolean = true;
+	const pageScrollerActiveUnsub : Unsubscriber = pageScrollerService._scrollerActiv.subscribe((value : boolean) => {
+			pageScrollerActiv = value;
+		});
 	onDestroy(() => {
-		pageScrollerServiceUnsub();
+		pageScrollerActiveUnsub();
+		pageScrollerNumberUnsub();
 	});
 	/*#endregion*/
 
 	/*#region page scroller*/
-	const pageNumber : Writable<number> = pageScrollerService._pageNumber;
 	let lastScroll : number = 0;
 	function onmousewheel($event : any) {
+		if ( !pageScrollerActiv )
+			return	
        	if ( $event.wheelDeltaY > 0 ) {
 			if ( lastScroll < 0 )
 				amountOfScrolls = 0;
