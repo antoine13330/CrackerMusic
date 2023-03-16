@@ -1,26 +1,24 @@
 <script lang="ts">
 	import '../app.postcss';
-	import GorillazLogo3D from '$lib/images/gorillaz/logo/3D.png';
 	import { pageScrollerService } from '../_services/page-scroller.service';
+	import Nav from '../_component/nav/nav.svelte';
 	import type { Unsubscriber, Writable } from 'svelte/store';
-	import { onDestroy, onMount } from 'svelte';
+	import { onDestroy } from 'svelte';
+	import AlbumCover from '../_component/album-cover/album-cover.svelte';
 	/*#region layout lifecycle*/
-	let _pageScrollerUnsub : Unsubscriber;
-	onMount(() => {
-		_pageScrollerUnsub = pageScrollerService._pageNumber.subscribe((value : number) => {
+	let amountOfScrolls : number = 0;
+	let page : number = 0;
+	const pageScrollerServiceUnsub : Unsubscriber = pageScrollerService._pageNumber.subscribe((value : number) => {
 			amountOfScrolls = 0;
 			page = value;
 		});
-	});
 	onDestroy(() => {
-		_pageScrollerUnsub.;
+		pageScrollerServiceUnsub();
 	});
 	/*#endregion*/
 
 	/*#region page scroller*/
-	let amountOfScrolls : number = 0;
-	let page : number = 0;
-	const pageNumber :  Writable<number> = pageScrollerService._pageNumber;
+	const pageNumber : Writable<number> = pageScrollerService._pageNumber;
 	let lastScroll : number = 0;
 	function onmousewheel($event : any) {
        	if ( $event.wheelDeltaY > 0 ) {
@@ -34,9 +32,9 @@
 			amountOfScrolls++;
 			lastScroll = -1;
 		}
-		if ( amountOfScrolls > 10 ) {
+		if ( amountOfScrolls > 2 ) {
 			pageScrollerService.scrollTo( 
-				lastScroll > 0 ? true : false 
+				lastScroll < 0 ? true : false 
 				);
     	}
 	}
@@ -45,20 +43,15 @@
 <!-- for creating this one page "parallax" effect-->
 <svelte:window on:wheel={onmousewheel}/> 
 <div class="page-background">
-
 	<div class="elipsis bg-primary first page-{page}">
 	</div> 
-	<div class="elipsis bg-primary second">
+	<div class="elipsis bg-primary second page-{page}">
 	</div>
-	<div class="elipsis bg-secondary third">
+	<div class="elipsis bg-secondary third page-{page}">
 	</div>
-
 	<!-- content -->
 	<div class="blur-layer z-[3]"> 
-		<nav>
-			{$pageNumber}
-			<img src={GorillazLogo3D} alt="Gorillaz 3D Logo" />
-		</nav>
+		<Nav />
 		<slot />
 	</div>
 	<!--  -->
@@ -78,28 +71,36 @@
 		overflow-hidden
 		w-screen;
 	}
-	nav { 
-		@apply py-2 
-		flex justify-center
-		h-16;
-	}
-	nav img {
-		@apply h-full;
-	}
+
+	/*#region elipsis*/
 	.elipsis {
 		@apply
 		absolute
-		rounded-full;
+		rounded-full
+		transition-all duration-1000;
 	}
+	/* - first elipsis*/
 	.elipsis.first {
 		@apply w-[15vw] h-[15vw] z-[2] right-[10%] top-[45%];
 	}
+	.elipsis.first.page-1 {
+		@apply right-[65%];
+	}
+	/* - second elipsis*/
 	.elipsis.second {
 		@apply w-[20vw] h-[20vw] z-[1] left-1/3 top-[40%];
 	}
+	.elipsis.second.page-1 {
+		@apply left-[40%] top-[30%];
+	}
+	/* - third elipsis*/
 	.elipsis.third {
 		@apply w-[30vw] h-[30vw] z-[0] right-1/4 top-[10%];
 	}
+	.elipsis.third.page-1 {
+		@apply right-[45%];
+	}
+	/*#endregion*/
 	.blur-layer {
 		@apply 
 		bg-transparent
@@ -111,6 +112,7 @@
 		overflow-hidden
 		backdrop-blur-[100px]
 		w-screen;
+		transition: all .3s ease-in-out;
 	}
 	
 </style>

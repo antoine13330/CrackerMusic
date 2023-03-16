@@ -6,5 +6,5 @@ export interface Song {
     album: string;
     year: number;
     feat : string;
-    duration : number;
+    duration : string;
 }

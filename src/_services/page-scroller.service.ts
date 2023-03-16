@@ -11,7 +11,6 @@ class PageScrollerService {
      * setPageScroller
      */
     public scrollTo( nextPage : boolean) {
-        alert("scroll" + nextPage)
         this._pageNumber.update( (page) => {
             if (nextPage) {
                 if (page < this.maxPage) {

@@ -1,0 +1,98 @@
+:root {
+    --glitch-animation-duration : 4s;
+}
+.glitch-animation {
+    animation: glitch-effect var(--glitch-animation-duration) infinite linear alternate-reverse;
+    user-select: none;
+    user-zoom: fixed;
+}
+.glitch-animation:before , .glitch-animation:after {
+    @apply text-7xl;
+    content: "Gorillaz";
+    font-family : 'gorillaz';
+    position: absolute;
+    top: 0;
+    color: transparent;
+}
+
+.glitch-animation:before {
+    left: 1px;
+    text-shadow: -1px 0 var(--primary-color);
+    animation: glitch-effect-2 var(--glitch-animation-duration) infinite linear alternate-reverse;
+}
+.glitch-animation:after {
+    left: -1px;
+    text-shadow: 1px 0 var(--secondary-color);
+    animation: glitch-effect-1 var(--glitch-animation-duration) infinite linear alternate-reverse;
+}
+@keyframes glitch-effect { 
+    0% {
+        transform: skew(0, 0);
+    } 10% {
+        transform: skew(4deg, 0);
+    } 20% {
+        transform: skew(-2deg, 0);
+    } 30% {
+        transform: skew(0, 0);
+    } 40% {
+        transform: skew(4deg, 0);
+    } 50% {
+        transform: skew(-2deg, 0);
+    } 60% {
+        transform: skew(0, 0);
+    } 70% {
+        transform: skew(-2deg, 0);
+    } 80% {
+        transform: skew(4deg, 0);
+    } 90% {
+        transform: skew(0, 0);
+    } 100% {
+        transform: skew(0, 0);
+    }
+}
+@keyframes glitch-effect-1 {
+    0% {
+        transform: translate(0, 0);
+    } 10% {
+        transform: translate(-1px, 0);
+    } 20% {
+        transform: translate(1px, 0);
+    } 30% {
+        transform: translate(0, 0);
+    } 40% {
+        transform: translate(1px, 0);
+    } 50% {
+        transform: translate(-1px, 0);
+    } 60% {
+        transform: translate(0, 0);
+    } 70% {
+        transform: translate(-1px, 0);
+    } 80% {
+        transform: translate(0, 0);
+    } 100% {
+        transform: translate(0, 0);
+    }
+}
+@keyframes glitch-effect-2 {
+    0% {
+        transform: translate(0, 0);
+    } 10% {
+        transform: translate(1px, 0);
+    } 20% {
+        transform: translate(-1px, 0);
+    } 30% {
+        transform: translate(0, 0);
+    } 40% {
+        transform: translate(-1px, 0);
+    } 50% {
+        transform: translate(1px, 0);
+    } 60% {
+        transform: translate(0, 0);
+    } 70% {
+        transform: translate(1px, 0);
+    } 80% {
+        transform: translate(0, 0);
+    } 100% {
+        transform: translate(0, 0);
+    }
+}
