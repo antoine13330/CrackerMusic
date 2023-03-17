@@ -10,7 +10,6 @@
         choosedProvider = value;
     });
     onMount(() => {
-        moveProviderIndicator(choosedProvider);
     });
     onDestroy(() => {
         choosenProviderUnsub();
