@@ -1,12 +1,12 @@
 <script lang="ts">
-  import './+page.postcss';
 	import { onDestroy } from "svelte";
 	import type { Unsubscriber } from "svelte/store";
 	import AlbumCover from "../_component/album-cover/album-cover.svelte";
 	import SongRow from "../_component/song-row/song-row.svelte";
 	import type { Song } from "../_model/music/song/song";
+  import SongList from "../_component/song-list/song-list.svelte";
 	import { pageScrollerService } from "../_services/page-scroller.service";
-  // import out animation
+
   let page : number = 0;
   const pageScrollerServiceUnsub : Unsubscriber = pageScrollerService._pageNumber.subscribe((value : number) => {
       page = value;
@@ -63,27 +63,5 @@
   </script>
 
 <AlbumCover {page}/>
-<div class="song-list page-{page}" >
-  <div class="song-list__album-info">
-    <span class="song-list__song-count">
-      12 songs
-    </span>
-    <span class="song-list__duration-count">
-      57min34s
-    </span>
-  </div>
-  <div class="song-list__wrapper" on:mouseenter={disablePageScroller} on:mouseleave={enablePageScroller}>
-    {#each songs as song, i}
-      <SongRow {page} {song} delay={
-      page != 1 ? i : songs.length - i
-      }/>
-    {/each}
-  </div>
-
-</div>
-
-
-<style>
-
-</style>
+<SongList {page} {songs} on:mouseenter={disablePageScroller} on:mouseleave={enablePageScroller} />
 
