@@ -2,16 +2,16 @@
 @import '../../_css/_animations/in.postcss';
 .song-list {
 	@apply w-full 
-    h-0
     opacity-0
     flex                          
     flex-col
-    items-center;
-	animation: filling-out 1s ease-in-out forwards;
+    items-center
+    transition-all
+    duration-500
+    ease-in-out;
 }
 .song-list.page-1 {
-	@apply flex;
-	animation: filling-in 1s ease-in-out forwards;
+    @apply  h-[60%] opacity-100;
 }
 .song-list__album-info {
 	@apply w-1/2
@@ -36,9 +36,11 @@
     h-full
     flex
     flex-wrap
-    overflow-y-auto
-    justify-center;
+    overflow-x-auto
+    justify-center
+    snap-y;
 }
+
 
 /* Animations used only here */
 @keyframes filling-out {

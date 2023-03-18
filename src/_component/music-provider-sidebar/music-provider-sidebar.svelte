@@ -5,8 +5,8 @@
     import { onDestroy , onMount } from 'svelte';
     import type { MusicProvider } from '../_model/music/music-provider/music-provider';
     let availableProviders = availableMusicProviders;
-    let choosedProvider : MusicProvider;
-    const choosenProviderUnsub : Unsubscriber = musicProviderService._musicProvider.subscribe((value : MusicProvider) => {
+    let choosedProvider : MusicProviderInfo;
+    const choosenProviderUnsub : Unsubscriber = musicProviderService._musicProvider.subscribe((value : MusicProviderInfo) => {
         choosedProvider = value;
     });
     onMount(() => {

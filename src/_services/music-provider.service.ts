@@ -20,15 +20,18 @@ class MusicProviderService {
 export const availableMusicProviders : MusicProviderInfo[] = [
     { 
         name: 'Spotify',
-        logo: '/images/music-providers/logo/spotify.png'
+        logo: '/images/music-providers/logo/spotify.png',
+        color: '#1DB954'
     },
     {
         name: 'Deezer',
-        logo: '/images/music-providers/logo/deezer.png'
+        logo: '/images/music-providers/logo/deezer.png',
+        color: '#00A0E9'
     },
     {
         name: 'Apple Music',
-        logo: '/images/music-providers/logo/apple-music.png'
+        logo: '/images/music-providers/logo/apple-music.png',
+        color: '#fe2954'
     }
 ];
 export const musicProviderService = new MusicProviderService();
