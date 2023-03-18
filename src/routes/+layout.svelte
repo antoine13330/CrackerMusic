@@ -58,7 +58,7 @@
 	<!-- content -->
 	<div class="blur-layer z-[3]"> 
 		<Nav />
-		<MusicProviderSidebar/>
+	<!-- <MusicProviderSidebar/> -->
 		<slot />
 	</div>
 	<!--  -->
