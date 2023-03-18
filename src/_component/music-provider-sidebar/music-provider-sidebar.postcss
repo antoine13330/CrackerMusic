@@ -1,0 +1,50 @@
+.music-provider-sidebar {
+    @apply
+    absolute
+    z-20
+    h-[225px]
+    w-fit
+    top-1/2
+    translate-y-[-50%]
+    bg-slate-800
+    rounded-r-3xl;
+}
+
+.music-provider-sidebar__items-wrapper {
+    @apply
+    flex
+    flex-col
+    h-full
+    w-full
+    overflow-visible
+    items-center 
+    justify-center
+}
+.music-provider-sidebar__item {
+    @apply
+    flex
+    items-center
+    justify-center
+    rounded
+    mx-2
+    my-2
+    cursor-pointer
+    transition-all
+    duration-500
+    ease-in-out
+}
+.music-provider-sidebar__item img {
+    @apply
+    w-12
+    h-12
+    object-contain
+    transition-all 
+    duration-500;
+}
+.music-provider-sidebar__item--active img {
+    @apply 
+    translate-x-1/2
+}
+
+
+

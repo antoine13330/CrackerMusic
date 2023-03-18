@@ -1,1 +1,7 @@
-export type MusicProvider = 'Spotify' | 'Deezer' | 'Apple Music' | 'YouTube Music' | 'SoundCloud' | 'Tidal' | 'Amazon Music' | 'Google Play Music' | 'Pandora' | 'iHeartRadio' | 'Napster' | 'Slacker Radio' | 'Rhapsody' | 'JOOX' | 'Yandex Music' | 'TuneIn' | 'MediaNet' | 'Shazam' | '7digital' | 'Anghami' | 'Audible' | 'Bandcamp' | 'Beatport' | 'Blinkbox Music' | 'Boomplay' | 'ClaroMusica' | 'Deezer' | 'Douban' | 'eMusic' | 'Gaana' | 'Google Play Music' | 'Groove Music' | 'HearThisAt' | 'iHeartRadio' | 'iMusic' | 'JOOX' | 'Juke' | 'KKBox' | 'KuGou' | 'KuWo' | 'Last.fm' | 'MediaNet' | 'Mixcloud' | 'Moodagent' | 'Napster' | 'NetEase Cloud Music' | 'Nusic' | 'Odnoklassniki' | 'Pandora' | 'Playster' | 'Qobuz' | 'Rdio' | 'Rhapsody' | 'Saavn' | 'Shazam' | 'Slacker Radio' | 'SoundCloud' | 'Spotify' | 'Stitcher' | 'Tidal' | 'TuneIn' | 'Twitch' | 'Vimeo' | 'Virgin Media' | 'Vox' | 'Wimp' | 'Yandex Music' | 'YouTube Music' | 'YouTube' | 'Zvooq' | '7digital' | 'Amazon Music' | 'Anghami' | 'Audible' | 'Bandcamp' | 'Beatport' | 'Blinkbox Music' | 'Boomplay' | 'ClaroMusica';
+export type MusicProvider = 'Spotify' | 'Deezer' | 'Apple Music';
+
+export interface MusicProviderInfo {
+    name: MusicProvider;
+    logo: string;
+    color : string;
+}

@@ -1,0 +1,37 @@
+
+.song-list {
+    @apply w-full 
+    h-1/2
+    flex
+    flex-col
+    items-center;
+  }
+  .song-list__album-info {
+    @apply w-1/2
+    h-4
+    flex
+    justify-between
+    items-center
+    font-semibold
+    px-2
+    py-4
+    text-zinc-300
+    text-sm;
+    animation: slide-out 1s ease-in-out;
+  }
+  .song-list__album-info .page-1 {
+    animation : slide-in 1s ease-in-out;
+  }
+  .song-list__wrapper {
+    @apply w-1/2
+    h-full
+    flex
+    snap-y
+    snap-mandatory
+    flex-wrap
+    overflow-y-auto
+    justify-center;
+  }
+
+
+ 

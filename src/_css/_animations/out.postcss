@@ -5,7 +5,32 @@
     }
     to {
       opacity: 0;
-      transform: translateY(-100%);
+      transform: translateY(10px);
+      display: none;
     }
   }
   
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(40px , 10px);
+    display: none;
+  }
+}
+
+@keyframes hop-out {
+  from {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0, 40px);
+    display: none;
+  }
+}
+

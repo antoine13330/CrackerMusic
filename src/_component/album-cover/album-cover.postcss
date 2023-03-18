@@ -21,8 +21,15 @@
 }
 .album-cover__title {
     @apply text-primary-500
-    font-semibold
-    text-lg;
+    font-extrabold
+    text-4xl;
+    background-image: url(https://media.giphy.com/media/sHRlEmxFuhEAM/giphy.gif);
+    background-size : cover;
+    background-clip : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.329);     
+
 }
 .album-cover__streams {
     @apply relative
@@ -36,7 +43,7 @@
 /*#endregion */
 
 /*#region page 0 */
-.album-cover.page-0 .album-cover__streams {
+.album-cover.page-0 .album-cover__streams , .album-cover.page-0 .album-cover__title {
     animation-name : in;
     animation-duration: .8s;
     animation-timing-function: ease-in;
@@ -46,14 +53,14 @@
 
 /*#region page 1 */
 .album-cover.page-1 {
-    @apply min-h-[80px]
+    @apply
     h-1/4;
 }
 .album-cover.page-1 .album-cover__image {
     @apply w-2/3
     h-2/3;
 }
-.album-cover.page-1 .album-cover__streams {
+.album-cover.page-1 .album-cover__streams , .album-cover.page-1 .album-cover__title {
     animation-name : out;
     animation-duration: .8s;
     animation-timing-function: ease-out;
