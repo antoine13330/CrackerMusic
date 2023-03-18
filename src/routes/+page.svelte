@@ -2,7 +2,7 @@
 	import { onDestroy } from "svelte";
 	import type { Unsubscriber } from "svelte/store";
 	import AlbumCover from "../_component/album-cover/album-cover.svelte";
-	import SongRow from "../_component/song-row/song-row.svelte";
+	import SongRow from "../_component/song-card/song-card.svelte";
 	import type { Song } from "../_model/music/song/song";
   import SongList from "../_component/song-list/song-list.svelte";
 	import { pageScrollerService } from "../_services/page-scroller.service";
@@ -38,7 +38,7 @@
     title : "Cracker Island",
     album : "Gorillaz",
     artist : "Gorillaz",
-    coverPath : "/images/gorillaz/cracker-island/song-cover/baby-queen.png",
+    coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
   } ,{
     id : 0,
@@ -47,7 +47,7 @@
     title : "Cracker Island",
     album : "Gorillaz",
     artist : "Gorillaz",
-    coverPath : "/images/gorillaz/cracker-island/song-cover/cracker-island.png",
+    coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
   },{
     id : 0,
@@ -56,7 +56,7 @@
     title : "Cracker Island",
     album : "Gorillaz",
     artist : "Gorillaz",
-    coverPath : "/images/gorillaz/cracker-island/song-cover/tarantula.png",
+    coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
   },{
     id : 0,
@@ -65,22 +65,28 @@
     title : "Cracker Island",
     album : "Gorillaz",
     artist : "Gorillaz",
-    coverPath : "/images/gorillaz/cracker-island/song-cover/new-gold.png",
+    coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
   } ]
   const songs = songList.concat(songList,songList);
   </script>
 
 <AlbumCover {page}/>
-<div on:click={toNextPage} class="to-next page-{page}">
+<div on:keydown={() => null} on:click={toNextPage} class="to-next page-{page}">
   <div class="to-next__wrapper">
-      Discover the album on
-      <span class="to-next__providers--wrapper">
-        {#each availableMusicProviders as provider}
-          <span style="color : {provider.color}" class="to-next__provider" class:to-next__provider--selected={provider.name === choosedProvider.name}>
-            {provider.name}
-          </span>
-        {/each}      
+      <span class="flex">
+        <h2>Discover the album on</h2>
+        <span class="to-next__providers">
+          {#each availableMusicProviders as provider}
+            <span style="color : {provider.color}" class="to-next__provider" class:to-next__provider--selected={provider.name === choosedProvider.name}>
+              {provider.name}
+            </span>
+          {/each}      
+        </span>
+      </span>
+      <span class="to-next__icon">
+        <i class="fa-solid fa-chevron-down"></i>
+      </span>
   </div>
 </div>
 <SongList {page} {songs} on:mouseenter={disablePageScroller} on:mouseleave={enablePageScroller} />
@@ -105,10 +111,23 @@
     ;
     animation : hop-in 1s forwards;
   }
+
   .to-next__wrapper {
     @apply
     animate-bounce
+    flex
+    flex-col
+    items-center
     ;
+  }
+  .to-next__providers {
+    @apply
+    pl-2
+    ;
+  }
+  .to-next__icon {
+    @apply
+    py-1;
   }
    .to-next__provider:not(.to-next__provider--selected) {
     @apply

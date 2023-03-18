@@ -3,15 +3,19 @@
 .song-list {
 	@apply w-full 
     opacity-0
+    top-1/2
+    -translate-y-1/2
+    absolute
     flex                          
     flex-col
     items-center
+    justify-center
     transition-all
-    duration-500
+    duration-[1000ms]
     ease-in-out;
 }
 .song-list.page-1 {
-    @apply  h-[60%] opacity-100;
+    animation: fade-in 1s ease-in-out forwards;
 }
 .song-list__album-info {
 	@apply w-1/2
@@ -32,34 +36,24 @@
 	animation: hop-in 1s ease-in-out forwards;
 }
 .song-list__wrapper {
-	@apply w-1/2
+	@apply w-full
+    relative
     h-full
     flex
-    flex-wrap
-    overflow-x-auto
-    justify-center
-    snap-y;
+    items-center
+    gap-6
+    overflow-x-scroll
+    snap-x
+    snap-mandatory;
 }
 
 
-/* Animations used only here */
-@keyframes filling-out {
-	from {
-        opacity: 1;
-		height: 50%;
-	}
-	to {
+@keyframes fade-in {
+    0% {
         opacity: 0;
-		height: 0%;
-	}
-}
-@keyframes filling-in {
-	from {
-		height: 0%;
+    } 50% {
         opacity: 0;
-	}
-	to {
+    } 100% {
         opacity: 1;
-		height: 50%;
-	}
+    }
 }

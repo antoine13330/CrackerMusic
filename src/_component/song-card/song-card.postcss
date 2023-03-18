@@ -1,0 +1,79 @@
+.song-card {
+    @apply 
+    z-10
+    h-52
+    snap-center
+    snap-always
+    bg-transparent
+    rounded-lg
+    shadow-md
+    font-semibold
+    grid
+    grid-rows-1
+    grid-cols-2
+    cursor-pointer
+    transition-all
+    duration-300
+    ease-in-out
+    ;
+    aspect-ratio: 2/1;
+    }
+.song-card:hover {
+    @apply
+    shadow-xl
+    ;
+    }
+.song-card img {
+    @apply
+    rounded-l-lg
+    object-cover
+    h-full;
+}
+
+.song-card__content {
+    @apply
+    p-4
+    grid
+    grid-rows-4
+    ;
+}
+
+.song-card__infos {
+    @apply
+    row-span-3
+    flex
+    flex-col
+    ;
+}
+
+.song-card__title {
+    @apply
+    text-xl
+    font-bold
+    text-zinc-300
+    ;
+}
+
+.song-card__actions {
+    @apply
+    row-span-1
+    flex
+    flex-row
+    justify-between
+    items-center;
+}
+
+
+.song-card__actions--icon {
+    @apply
+    bg-transparent
+    rounded-full
+    p-2
+    fill-zinc-300
+    ;
+}
+.song-card__actions--icon:hover {
+    @apply
+    animate-pulse
+    ;
+}

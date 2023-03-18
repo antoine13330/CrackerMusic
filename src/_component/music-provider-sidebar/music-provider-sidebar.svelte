@@ -22,9 +22,12 @@
 
 <div class="music-provider-sidebar">
     <div class="music-provider-sidebar__items-wrapper">
+        <div class="music-provider-sidebar__item">
+        </div>
         {#each availableProviders as musicProvider , i}
             <div class="music-provider-sidebar__item"
             on:click="{() => onChooseMusicProvider(musicProvider)}"
+            on:keydown="{() => null}"
             class:music-provider-sidebar__item--active="{musicProvider.name === choosedProvider.name}"
             >
                 <img src={musicProvider.logo}  title="{musicProvider.name}" alt="Logo of {musicProvider.name}"/>
