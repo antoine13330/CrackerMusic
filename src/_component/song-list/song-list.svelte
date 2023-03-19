@@ -1,9 +1,19 @@
 <script lang="ts">
     import './song-list.postcss';
+    import { onMount } from 'svelte';
 	import type { Song } from "../_model/music/song/song";
 	import SongCard from "../song-card/song-card.svelte";
     export let page : number = 0;
     export let songs : Song[] = [];
+
+    onMount(() => {
+        // get the closet song-card__first class el and scroll to it 
+        const firstSongCard = document.querySelector(`.song-card__first.page-${page}`);
+        if(firstSongCard) {
+            firstSongCard.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+        }
+
+    });
 </script>
 
 
@@ -24,7 +34,7 @@
         {#each songs as song, i}
             <SongCard {page} {song} delay={
             page != 1 ? i : songs.length - i
-            }/>
+            } index={i}/>
         {/each}
         <div class="song-card page-{page} opacity-0">
         </div>
