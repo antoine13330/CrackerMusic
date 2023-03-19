@@ -2,6 +2,7 @@
 	import '../app.postcss';
 	import { pageScrollerService } from '../_services/page-scroller.service';
 	import Nav from '../_component/nav/nav.svelte';
+	import PlayBar from '../_component/play-bar/play-bar.svelte';
 	import MusicProviderSidebar from '../_component/music-provider-sidebar/music-provider-sidebar.svelte';
 	import type { Unsubscriber, Writable } from 'svelte/store';
 	import { onDestroy } from 'svelte';
@@ -60,6 +61,7 @@
 		<Nav />
 	<!-- <MusicProviderSidebar/> -->
 		<slot />
+		<PlayBar />
 	</div>
 	<!--  -->
 	

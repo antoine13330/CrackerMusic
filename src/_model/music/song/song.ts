@@ -9,3 +9,8 @@ export interface Song {
     feat : string;
     duration : string;
 }
+
+export interface PlayedSong extends Song {
+    currentTime : number;
+    playing : boolean;
+}
