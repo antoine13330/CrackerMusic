@@ -1,10 +1,11 @@
 /*#region svelte imports*/
-
+import { writable, type Writable } from 'svelte/store';
 import type { Song } from "src/_model/music/song/song";
 
 /*#endregion*/
 class MusicPlayerService {
     audio?: HTMLAudioElement;
+    _actualDB : Writable<number> = writable(0);
     public play() {
         console.log('play');
     }
@@ -18,31 +19,27 @@ class MusicPlayerService {
         console.log('previous');
     }
     public setMusicPlayed(song: Song) {
-        const audioContext = new AudioContext();
-        const analyser = audioContext.createAnalyser();
-        analyser.fftSize = 2048;
-
-        const audio = new Audio(song.url);
-        const source = audioContext.createMediaElementSource(audio);
-        source.connect(analyser);
-        analyser.connect(audioContext.destination);
+        const audioCtx = new AudioContext();
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+        this.audio = new Audio(song.url);
+        const source = audioCtx.createMediaElementSource(this.audio);
 
         const bufferLength = analyser.frequencyBinCount;
-        const dataArrayFreq = new Uint8Array(bufferLength);
-        const dataArrayTime = new Uint8Array(bufferLength);
+        const dataArray = new Uint8Array(bufferLength);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+        this.audio.play();
+        this.audio.addEventListener('timeupdate', () => {
+            analyser.getByteFrequencyData(dataArray);
+            // make the average of the frequencies
+            const avg = dataArray.reduce((acc, cur) => acc + cur * cur, 0) / dataArray.length;
+            const db = 20 * Math.log10(avg / 255);
+            console.log(db);
 
-        audio.play();
+        });
 
-        setInterval(() => {
-            analyser.getFrequencyData();
-            console.log('Frequency data:', dataArrayFreq);
-
-            analyser.getByteTimeDomainData(dataArrayTime);
-            console.log('Time domain data:', dataArrayTime);
-        }, 1000);
     }
-
-
 }
 
 export const musicPlayerService = new MusicPlayerService();
