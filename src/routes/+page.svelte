@@ -40,6 +40,7 @@
     artist : "Gorillaz",
     coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
+    url : 'audio/gorillaz/cracker-island.mp3'
   } ,{
     id : 0,
     year : 2023,
@@ -49,6 +50,8 @@
     artist : "Gorillaz",
     coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
+    url : 'audio/gorillaz/cracker-island.mp3'
+
   },{
     id : 0,
     year : 2023,
@@ -58,6 +61,7 @@
     artist : "Gorillaz",
     coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
+    url : 'audio/gorillaz/cracker-island.mp3'
   },{
     id : 0,
     year : 2023,
@@ -67,6 +71,7 @@
     artist : "Gorillaz",
     coverPath : "/images/gorillaz/cracker-island/song-cover/crocadillaz.jpg",
     duration : "2:34",
+    url : 'audio/gorillaz/cracker-island.mp3'
   } ]
   const songs = songList.concat(songList,songList);
   </script>
