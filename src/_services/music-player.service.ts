@@ -20,7 +20,11 @@ class MusicPlayerService {
         console.log('previous');
     }
     public setMusicPlayed(song: Song) {
-        this.audio?.pause();
+        if ( this.audio ) {
+            this.audio.pause();
+            this.audio.src = "";
+            this.audio = undefined;
+        }
         const audioCtx = new AudioContext();
         const analyser = audioCtx.createAnalyser();
         analyser.fftSize = 256;
@@ -42,6 +46,7 @@ class MusicPlayerService {
             // make the average of the frequencies
             const avg = dataArray.reduce((acc, cur) => acc + cur * cur, 0) / dataArray.length;
             const db = 20 * Math.log10(avg / 255);
+            if ( !isFinite(db) ) return;
             this._currDB.set(db);
             this._songInfo.update((song) => {
                 if (song) {

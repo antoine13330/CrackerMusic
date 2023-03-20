@@ -1,5 +1,5 @@
 <script lang="ts">
-    import './play-bar.postcss';
+    import './player.postcss';
     import { musicPlayerService } from '../../_services/music-player.service';
     import { onMount , onDestroy } from 'svelte';
     import type { Unsubscriber } from 'svelte/store';
@@ -16,18 +16,20 @@
         playingSongUnsub();
         currDBUnsub();
     });
-</script>
+
+ </script>
 {#if playingSong}
 <!-- create a db reactiv audio visualizer -->
 {currDB}
-    <div class="play-bar">
-        <div class="play-bar__visualizer ">
-            <div class="play-bar__visualizer__db" style="height: {currDB * 2}px">
+    <div class="player">
+        
+        <div class="player__visualizer ">
+            <div class="player__visualizer__db" style="height: {currDB * 2}px">
             </div>
         </div>
         <!-- play / pause button--> 
-        <div class="play-bar__actions">
-            <div class="play-bar__actions__play-pause">
+        <div class="player__actions">
+            <div class="player__actions__play-pause">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
             </div>
         </div>

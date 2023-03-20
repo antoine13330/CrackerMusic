@@ -9,7 +9,6 @@
 
     function onPlayMusic(song : Song) {
         musicPlayerService.setMusicPlayed(song);
-        
     }
 </script>
 
