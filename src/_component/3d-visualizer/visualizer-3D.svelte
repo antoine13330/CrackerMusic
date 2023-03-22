@@ -8,6 +8,7 @@
     let camera : PerspectiveCamera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
     let baseRadius : number = 1;
     var sphere : SphereGeometry = new THREE.SphereGeometry(baseRadius, 32, 32);
+
     const material : MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x88c9d3 , wireframe : true });
     // add light to show the cube
     const light : THREE.AmbientLight = new THREE.AmbientLight(0x404040); 
@@ -18,12 +19,11 @@
     scene.add(cube);
     camera.position.z = 5; 
 
-    const maxScale = 2; // l'échelle maximale de la sphère
-const minScale = 1; // l'échelle minimale de la sphère
-    function getScaleFromDecibels(decibel: number, currentScale: number): number {
-  // calculez la nouvelle échelle en fonction des variations de décibels
-  const dbScale = Math.pow(10, decibel / 20) * 0.01; // utilisez une échelle logarithmique pour limiter la taille de la sphère
-  const newScale = baseRadius * (1 + dbScale); // calculez la nouvelle échelle en fonction du rayon de base et de l'échelle logarithmique
+    const maxScale = 2;
+const minScale = 1; 
+    function getScaleFromDecibels(decibel: number): number {
+  const dbScale = Math.pow(10, decibel / 20) * 0.01; 
+  const newScale = baseRadius * (1 + dbScale); 
 
   // limitez l'échelle maximale et minimale
   const limitedScale = Math.min(maxScale, newScale);
@@ -35,11 +35,15 @@ const minScale = 1; // l'échelle minimale de la sphère
 let currentScale = baseRadius; // l'échelle initiale de la sphère
 
 const animate = () => {
-  requestAnimationFrame(animate);
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  currentScale = getScaleFromDecibels(decibel, currentScale);
-  cube.scale.set(currentScale, currentScale, currentScale);  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    const targetScale = getScaleFromDecibels(decibel);
+    currentScale += (targetScale - currentScale) * 0.2; // interpoler la nouvelle échelle avec l'échelle actuelle
+
+    cube.scale.set(currentScale, currentScale, currentScale);  
+    renderer.render(scene, camera);
 };
     const resize = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
