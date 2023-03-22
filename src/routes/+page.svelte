@@ -8,6 +8,7 @@
 	import { pageScrollerService } from "../_services/page-scroller.service";
   import { musicProviderService , availableMusicProviders } from '../_services/music-provider.service';
   import type MusicProviderInfo from "../_model/music/providers/providers.ts";
+	import type { MusicProvider } from "src/_model/music/providers/providers";
   let page : number = 0;
   const pageScrollerServiceUnsub : Unsubscriber = pageScrollerService._pageNumber.subscribe((value : number) => {
       page = value;
@@ -75,6 +76,7 @@
   } ]
   const songs = songList.concat(songList,songList);
   </script>
+
 
 <AlbumCover {page}/>
 <div on:keydown={() => null} on:click={toNextPage} class="to-next page-{page}">
