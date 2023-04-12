@@ -1,6 +1,6 @@
     <script lang="ts">
     import './song-card.postcss';
-        import type { Song } from '../../_model/music/song/song';
+    import type { Song } from '../../_model/music/song/song';
     import { musicPlayerService } from '../../_services/music-player.service.ts';
     export let delay : number = 0;  
     export let page : number = 0;

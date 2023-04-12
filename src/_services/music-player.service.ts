@@ -20,6 +20,7 @@ class MusicPlayerService {
         console.log('previous');
     }
     public setMusicPlayed(song: Song) {
+        console.log('setMusicPlayed');
         if ( this.audio ) {
             this.audio.pause();
             this.audio.src = "";

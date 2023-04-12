@@ -1,9 +1,10 @@
 <script lang="ts">
     import './player.postcss';
     import { musicPlayerService } from '../../_services/music-player.service';
-    import { onMount , onDestroy } from 'svelte';
+    import { onDestroy } from 'svelte';
     import type { Unsubscriber } from 'svelte/store';
-    import type { Song , SongInfo } from '../_model/music/song/song';
+    import type { SongInfo } from '../_model/music/song/song';
+
     let playingSong : SongInfo;
     const playingSongUnsub : Unsubscriber = musicPlayerService._songInfo.subscribe((value : SongInfo) => {
         playingSong = value;
@@ -17,7 +18,14 @@
         currDBUnsub();
     });
 
- </script>
+
+    let test : number = 0;
+    setInterval(() => {
+        test++;
+    }, 1000);
+</script>
+
+
 {#if playingSong}
 <!-- create a db reactiv audio visualizer -->
 {currDB}
